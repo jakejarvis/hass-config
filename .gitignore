@@ -1,0 +1,12 @@
+.cloud/
+.storage/
+secrets.yaml
+*.log
+*.log.*
+*.xml
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+.HA_VERSION
+image/

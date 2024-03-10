@@ -1,0 +1,676 @@
+- id: '1691589903173'
+  name: Chill Night
+  entities:
+    light.bedroom_table_left_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 102
+      friendly_name: Bedroom Left Light
+      supported_features: 40
+      state: 'off'
+    light.bedroom_table_right_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Bedroom Right Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 102
+      state: 'on'
+    light.bedroom_tall_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Bedroom Tall Lamp Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_couch_left_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 140
+      friendly_name: Living Room Couch Left Light
+      supported_features: 44
+      state: 'off'
+    light.living_room_couch_right_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Couch Right Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 140
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+    light.living_room_entryway_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Living Room Entryway Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_dining_table_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Table Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 102
+      state: 'on'
+    light.living_room_tall_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Tall Lamp Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 140
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+  metadata: {}
+  icon: mdi:sofa
+- id: '1691590202928'
+  name: Good Night
+  entities:
+    light.bedroom_table_left_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 76
+      friendly_name: Bedroom Left Light
+      supported_features: 40
+      state: 'off'
+    light.bedroom_table_right_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 102
+      friendly_name: Bedroom Right Light
+      supported_features: 40
+      state: 'off'
+    light.bedroom_tall_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 76
+      friendly_name: Bedroom Tall Lamp Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_couch_left_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 140
+      friendly_name: Living Room Couch Left Light
+      supported_features: 44
+      state: 'off'
+    light.living_room_couch_right_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 140
+      friendly_name: Living Room Couch Right Light
+      supported_features: 44
+      state: 'off'
+    light.living_room_entryway_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 76
+      friendly_name: Living Room Entryway Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_dining_table_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 102
+      friendly_name: Living Room Table Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_tall_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 140
+      friendly_name: Living Room Tall Lamp Light
+      supported_features: 44
+      state: 'off'
+  icon: mdi:weather-night
+  metadata: {}
+- id: '1695220870950'
+  name: Good Morning
+  entities:
+    light.bedroom_table_left_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Bedroom Left Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+    light.bedroom_table_right_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Bedroom Right Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+    light.bedroom_tall_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Bedroom Tall Lamp Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+    light.living_room_couch_left_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Couch Left Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 254
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+    light.living_room_couch_right_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Couch Right Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 254
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+    light.living_room_entryway_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Entryway Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+    light.living_room_dining_table_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Table Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+    light.living_room_tall_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Tall Lamp Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 254
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+  icon: mdi:weather-sunny
+  metadata: {}
+- id: '1695221111399'
+  name: Leave Home
+  entities:
+    light.bedroom_table_left_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Bedroom Left Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 102
+      state: 'on'
+    light.bedroom_table_right_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 102
+      friendly_name: Bedroom Right Light
+      supported_features: 40
+      state: 'off'
+    light.bedroom_tall_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Bedroom Tall Lamp Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_couch_left_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Living Room Couch Left Light
+      supported_features: 44
+      state: 'off'
+    light.living_room_couch_right_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Couch Right Light
+      supported_features: 44
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 167
+      - 89
+      xy_color:
+      - 0.524
+      - 0.387
+      state: 'on'
+    light.living_room_entryway_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Living Room Entryway Light
+      supported_features: 40
+      state: 'off'
+    light.living_room_dining_table_light:
+      supported_color_modes:
+      - brightness
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Living Room Table Light
+      supported_features: 40
+      color_mode: brightness
+      brightness: 102
+      state: 'on'
+    light.living_room_tall_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      off_with_transition: false
+      off_brightness: 254
+      friendly_name: Living Room Tall Lamp Light
+      supported_features: 44
+      state: 'off'
+  icon: mdi:door-closed-lock
+- id: '1695221216184'
+  name: Bedtime
+  entities:
+    light.bedroom_table_left_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Bedroom Table Left Light
+      supported_features: 44
+      linkquality: 228
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      color_mode:
+      brightness:
+      state: 'off'
+    light.bedroom_table_right_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Bedroom Table Right Light
+      supported_features: 44
+      linkquality: 184
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      color_mode: brightness
+      brightness: 102
+      state: 'on'
+    light.bedroom_tall_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Bedroom Tall Light
+      supported_features: 44
+      linkquality: 228
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      state: 'off'
+    light.living_room_couch_left_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - fireplace
+      - colorloop
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Living Room Couch Left Light
+      supported_features: 44
+      color:
+        x: 0.646
+        y: 0.304
+      linkquality: 255
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      state: 'off'
+    light.living_room_couch_right_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - fireplace
+      - colorloop
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Living Room Couch Right Light
+      supported_features: 44
+      color:
+        x: 0.4574
+        y: 0.41
+      linkquality: 164
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      state: 'off'
+    light.living_room_dining_table_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Dining Table Light
+      supported_features: 44
+      linkquality: 216
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      color_mode:
+      brightness:
+      state: 'off'
+    light.living_room_entryway_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Entryway Light
+      supported_features: 44
+      linkquality: 180
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      state: 'off'
+    light.living_room_tall_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - fireplace
+      - colorloop
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      friendly_name: Living Room Tall Light
+      supported_features: 44
+      color:
+        x: 0.4574
+        y: 0.41
+      linkquality: 248
+      update:
+        installed_version: 16786688
+        latest_version: 16786948
+        state: available
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      state: 'off'
+  icon: mdi:bed
+  metadata: {}

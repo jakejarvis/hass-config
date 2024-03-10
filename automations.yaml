@@ -1,0 +1,101 @@
+- id: '1698764547304'
+  alias: Turn on LG TV via HDMI-CEC
+  description: ''
+  trigger:
+  - platform: device
+    device_id: b1d1ac03040b311ea0512fda3e266ffd
+    domain: webostv
+    type: webostv.turn_on
+  condition: []
+  action:
+  - service: remote.send_command
+    data:
+      command: wakeup
+    target:
+      entity_id: remote.living_room_apple_tv
+  mode: single
+- id: '1700239030643'
+  alias: Daily backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:00:00
+  condition:
+  - condition: time
+    weekday:
+    - wed
+    enabled: false
+  action:
+  - service: hassio.backup_full
+    data:
+      compressed: true
+      homeassistant_exclude_database: false
+  - service: notify.notify
+    data:
+      message: Database backup created
+  mode: single
+- id: '1702133059860'
+  alias: Ping healthchecks.io every 15 minutes
+  description: ''
+  trigger:
+  - platform: time_pattern
+    minutes: /15
+  condition: []
+  action:
+  - service: rest_command.healthcheck
+    data: {}
+  mode: single
+- id: '1703028688211'
+  alias: Bedroom Dimmer Switch Buttons
+  description: ''
+  use_blueprint:
+    path: dustins/zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
+    input:
+      zha_device: df4a7dff9ef0cc3ae3c1cf1eb93542db
+      Up_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.chill_night
+        metadata: {}
+      Hue_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_night
+        metadata: {}
+      Down_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bedtime
+        metadata: {}
+      Power_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_morning
+        metadata: {}
+- id: '1703028714995'
+  alias: Living Room Dimmer Switch Buttons
+  description: ''
+  use_blueprint:
+    path: dustins/zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
+    input:
+      zha_device: ae99dce7de5127c7185c1d5ac542c982
+      Up_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.chill_night
+        metadata: {}
+      Hue_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_night
+        metadata: {}
+      Power_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_morning
+        metadata: {}
+      Down_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.leave_home
+        metadata: {}
