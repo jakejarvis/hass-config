@@ -14,37 +14,6 @@
     target:
       entity_id: remote.living_room_apple_tv
   mode: single
-- id: '1700239030643'
-  alias: Daily backup
-  description: ''
-  trigger:
-  - platform: time
-    at: 03:00:00
-  condition:
-  - condition: time
-    weekday:
-    - wed
-    enabled: false
-  action:
-  - service: hassio.backup_full
-    data:
-      compressed: true
-      homeassistant_exclude_database: false
-  - service: notify.notify
-    data:
-      message: Database backup created
-  mode: single
-- id: '1702133059860'
-  alias: Ping healthchecks.io every 15 minutes
-  description: ''
-  trigger:
-  - platform: time_pattern
-    minutes: /15
-  condition: []
-  action:
-  - service: rest_command.healthcheck
-    data: {}
-  mode: single
 - id: '1703028688211'
   alias: Bedroom Dimmer Switch Buttons
   description: ''

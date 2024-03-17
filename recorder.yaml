@@ -1,0 +1,25 @@
+db_url: !secret mariadb_url
+exclude:
+  domains:
+    - automation
+    - sun
+    - weather
+    - update
+    - media_player
+    - remote
+  entity_globs:
+    - sensor.system_monitor_*
+    - sensor.sun_*
+    - sensor.openweathermap_*
+    - sensor.londonderry_moose_hill_new_hampshire_usa_*
+    - number.*_sonos_one_balance
+    - number.*_sonos_one_bass
+    - number.*_sonos_one_treble
+    - switch.*_sonos_one_crossfade
+    - switch.*_sonos_one_loudness
+    - switch.*_sonos_one_status_light
+    - switch.*_sonos_one_touch_controls
+    - binary_sensor.*_sonos_one_microphone
+    - sensor.*_dimmer_switch_action
+    - input_text.*_dimmer_switch_last_controller_event
+    - select.*_light_power_on_behavior

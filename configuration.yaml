@@ -2,59 +2,22 @@
 default_config:
 
 homeassistant:
+  # important: apparently this section CANNOT be spun off into its own yaml file!
   auth_providers:
+    # trust Authelia to handle authentication, see:
+    # https://github.com/authelia/authelia/discussions/4681
+    - type: command_line
+      command: /config/auth.sh
+      args: ["auth.jrvs.io"]
+      meta: true
+    # keeping regular HA auth for now just in case authelia breaks, that would be bad...
     - type: homeassistant
 
-http:
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - 192.168.20.15
-
-recorder:
-  db_url: mysql://homeassistant:homeassistant@core-mariadb/homeassistant?charset=utf8mb4
-  exclude:
-    domains:
-      - automation
-      - sun
-      - weather
-      - update
-      - media_player
-      - remote
-    entity_globs:
-      - sensor.system_monitor_*
-      - sensor.sun_*
-      - sensor.openweathermap_*
-      - sensor.londonderry_moose_hill_new_hampshire_usa_*
-      - number.*_sonos_one_balance
-      - number.*_sonos_one_bass
-      - number.*_sonos_one_treble
-      - switch.*_sonos_one_crossfade
-      - switch.*_sonos_one_loudness
-      - switch.*_sonos_one_status_light
-      - switch.*_sonos_one_touch_controls
-      - binary_sensor.*_sonos_one_microphone
-      - sensor.*_dimmer_switch_action
-      - input_text.*_dimmer_switch_last_controller_event
-      - select.*_light_power_on_behavior
-
-influxdb:
-  host: a0d7b954-influxdb
-  port: 8086
-  database: homeassistant
-  username: homeassistant
-  password: homeassistant
-  max_retries: 3
-  default_measurement: state
-
-logger:
-  default: info
-  logs:
-    homeassistant.components.automation: warn
-
-# wake up smart TV
-# https://www.home-assistant.io/integrations/wake_on_lan/
-wake_on_lan:
-
 automation: !include automations.yaml
+frontend: !include frontend.yaml
+http: !include http.yaml
+influxdb: !include influxdb.yaml
+logger: !include logger.yaml
+recorder: !include recorder.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
