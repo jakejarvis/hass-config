@@ -14,6 +14,7 @@ html5_push_registrations.conf
 *.sqlite
 image/
 tts/
+deps/
 model_cache/
 __pycache__/
 

@@ -1,12 +1,14 @@
 blueprint:
   domain: automation
   name: Philips Hue v2 Smart Dimmer Switch and Remote
-  description: Philips Hue v2 Smart Dimmer Switch and Remote (RWL022) using Zigbee
+  description:
+    Philips Hue v2 Smart Dimmer Switch and Remote (RWL022) using Zigbee
     Home Automation
   input:
     zha_device:
       name: Philips Hue v2 Smart Dimmer Switch and Remote
-      description: List of available Philips Hue v2 Smart Dimmer Switch and Remote
+      description:
+        List of available Philips Hue v2 Smart Dimmer Switch and Remote
         devices
       selector:
         device:
@@ -205,100 +207,81 @@ blueprint:
       default: []
       selector:
         action: {}
-  source_url: https://community.home-assistant.io/t/zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022/353143
 mode: single
 max_exceeded: silent
 variables:
   device_id: !input zha_device
 trigger:
-- platform: event
-  event_type: zha_event
-  event_data:
-    device_id: !input zha_device
-condition: '{{ trigger.event.data.device_id == device_id }}'
+  - platform: event
+    event_type: zha_event
+    event_data:
+      device_id: !input zha_device
+condition: "{{ trigger.event.data.device_id == device_id }}"
 action:
-- variables:
-    button: '{{ trigger.event.data.args.button }}'
-    press_type: '{{ trigger.event.data.args.press_type }}'
-    command_type: '{{ trigger.event.data.command }}'
-- service: logbook.log
-  data:
-    name: Button
-    message: '{{ button }}'
-- service: logbook.log
-  data:
-    name: Press Type
-    message: '{{ press_type }}'
-- service: logbook.log
-  data:
-    name: Device
-    message: '{{ device_id }}'
-- service: logbook.log
-  data:
-    name: Command
-    message: '{{ command_type }}'
-- choose:
-  - conditions: '{{ command_type == "on_press" }}'
-    sequence: !input Power_Press
-  - conditions: '{{ command_type == "on_double_press" }}'
-    sequence: !input Power_Press2x
-  - conditions: '{{ command_type == "on_triple_press" }}'
-    sequence: !input Power_Press3x
-  - conditions: '{{ command_type == "on_quadruple_press" }}'
-    sequence: !input Power_Press4x
-  - conditions: '{{ command_type == "on_quintuple_press" }}'
-    sequence: !input Power_Press5x
-  - conditions: '{{ command_type == "on_short_release" }}'
-    sequence: !input Power_Release
-  - conditions: '{{ command_type == "on_hold" }}'
-    sequence: !input Power_HoldPress
-  - conditions: '{{ command_type == "on_long_release" }}'
-    sequence: !input Power_HoldRelease
-  - conditions: '{{ command_type == "up_press" }}'
-    sequence: !input Up_Press
-  - conditions: '{{ command_type == "up_double_press" }}'
-    sequence: !input Up_Press2x
-  - conditions: '{{ command_type == "up_triple_press" }}'
-    sequence: !input Up_Press3x
-  - conditions: '{{ command_type == "up_quadruple_press" }}'
-    sequence: !input Up_Press4x
-  - conditions: '{{ command_type == "up_quintuple_press" }}'
-    sequence: !input Up_Press5x
-  - conditions: '{{ command_type == "up_short_release" }}'
-    sequence: !input Up_Release
-  - conditions: '{{ command_type == "up_hold" }}'
-    sequence: !input Up_HoldPress
-  - conditions: '{{ command_type == "up_long_release" }}'
-    sequence: !input Up_HoldRelease
-  - conditions: '{{ command_type == "down_press" }}'
-    sequence: !input Down_Press
-  - conditions: '{{ command_type == "down_double_press" }}'
-    sequence: !input Down_Press2x
-  - conditions: '{{ command_type == "down_triple_press" }}'
-    sequence: !input Down_Press3x
-  - conditions: '{{ command_type == "down_quadruple_press" }}'
-    sequence: !input Down_Press4x
-  - conditions: '{{ command_type == "down_quintuple_press" }}'
-    sequence: !input Down_Press5x
-  - conditions: '{{ command_type == "down_short_release" }}'
-    sequence: !input Down_Release
-  - conditions: '{{ command_type == "down_hold" }}'
-    sequence: !input Down_HoldPress
-  - conditions: '{{ command_type == "down_long_release" }}'
-    sequence: !input Down_HoldRelease
-  - conditions: '{{ command_type == "off_press" }}'
-    sequence: !input Hue_Press
-  - conditions: '{{ command_type == "off_double_press" }}'
-    sequence: !input Hue_Press2x
-  - conditions: '{{ command_type == "off_triple_press" }}'
-    sequence: !input Hue_Press3x
-  - conditions: '{{ command_type == "off_quadruple_press" }}'
-    sequence: !input Hue_Press4x
-  - conditions: '{{ command_type == "off_quintuple_press" }}'
-    sequence: !input Hue_Press5x
-  - conditions: '{{ command_type == "off_short_release" }}'
-    sequence: !input Hue_Release
-  - conditions: '{{ command_type == "off_hold" }}'
-    sequence: !input Hue_HoldPress
-  - conditions: '{{ command_type == "off_long_release" }}'
-    sequence: !input Hue_HoldRelease
+  - variables:
+      command: "{{ trigger.event.data.command }}"
+  - choose:
+      - conditions: '{{ command == "on_press" }}'
+        sequence: !input Power_Press
+      - conditions: '{{ command == "on_double_press" }}'
+        sequence: !input Power_Press2x
+      - conditions: '{{ command == "on_triple_press" }}'
+        sequence: !input Power_Press3x
+      - conditions: '{{ command == "on_quadruple_press" }}'
+        sequence: !input Power_Press4x
+      - conditions: '{{ command == "on_quintuple_press" }}'
+        sequence: !input Power_Press5x
+      - conditions: '{{ command == "on_short_release" }}'
+        sequence: !input Power_Release
+      - conditions: '{{ command == "on_hold" }}'
+        sequence: !input Power_HoldPress
+      - conditions: '{{ command == "on_long_release" }}'
+        sequence: !input Power_HoldRelease
+      - conditions: '{{ command == "up_press" }}'
+        sequence: !input Up_Press
+      - conditions: '{{ command == "up_double_press" }}'
+        sequence: !input Up_Press2x
+      - conditions: '{{ command == "up_triple_press" }}'
+        sequence: !input Up_Press3x
+      - conditions: '{{ command == "up_quadruple_press" }}'
+        sequence: !input Up_Press4x
+      - conditions: '{{ command == "up_quintuple_press" }}'
+        sequence: !input Up_Press5x
+      - conditions: '{{ command == "up_short_release" }}'
+        sequence: !input Up_Release
+      - conditions: '{{ command == "up_hold" }}'
+        sequence: !input Up_HoldPress
+      - conditions: '{{ command == "up_long_release" }}'
+        sequence: !input Up_HoldRelease
+      - conditions: '{{ command == "down_press" }}'
+        sequence: !input Down_Press
+      - conditions: '{{ command == "down_double_press" }}'
+        sequence: !input Down_Press2x
+      - conditions: '{{ command == "down_triple_press" }}'
+        sequence: !input Down_Press3x
+      - conditions: '{{ command == "down_quadruple_press" }}'
+        sequence: !input Down_Press4x
+      - conditions: '{{ command == "down_quintuple_press" }}'
+        sequence: !input Down_Press5x
+      - conditions: '{{ command == "down_short_release" }}'
+        sequence: !input Down_Release
+      - conditions: '{{ command == "down_hold" }}'
+        sequence: !input Down_HoldPress
+      - conditions: '{{ command == "down_long_release" }}'
+        sequence: !input Down_HoldRelease
+      - conditions: '{{ command == "off_press" }}'
+        sequence: !input Hue_Press
+      - conditions: '{{ command == "off_double_press" }}'
+        sequence: !input Hue_Press2x
+      - conditions: '{{ command == "off_triple_press" }}'
+        sequence: !input Hue_Press3x
+      - conditions: '{{ command == "off_quadruple_press" }}'
+        sequence: !input Hue_Press4x
+      - conditions: '{{ command == "off_quintuple_press" }}'
+        sequence: !input Hue_Press5x
+      - conditions: '{{ command == "off_short_release" }}'
+        sequence: !input Hue_Release
+      - conditions: '{{ command == "off_hold" }}'
+        sequence: !input Hue_HoldPress
+      - conditions: '{{ command == "off_long_release" }}'
+        sequence: !input Hue_HoldRelease

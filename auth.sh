@@ -8,7 +8,7 @@
 # homeassistant:
 #   auth_providers:
 #     - type: command_line
-#       command: /auth/authelia.sh
+#       command: /config/auth.sh
 #       args: ["auth.example.com"]
 #       meta: true
 #     - type: homeassistant
@@ -19,7 +19,7 @@ die() {
 }
 
 AUTHELIA="$1"
-test -z "$AUTHELIA" && die "Usage: username=USER password=PASS authelia.sh auth.example.com"
+test -z "$AUTHELIA" && die "Usage: username=USER password=PASS auth.sh auth.example.com"
 
 cookie_jar=$(mktemp)
 trap "rm -rf \"$cookie_jar\"" EXIT

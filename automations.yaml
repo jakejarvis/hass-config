@@ -3,7 +3,7 @@
   description: ''
   trigger:
   - platform: device
-    device_id: b1d1ac03040b311ea0512fda3e266ffd
+    device_id: f5f3cf9514faa9997ed29ed0ea2751cc
     domain: webostv
     type: webostv.turn_on
   condition: []
@@ -14,38 +14,11 @@
     target:
       entity_id: remote.living_room_apple_tv
   mode: single
-- id: '1703028688211'
-  alias: Bedroom Dimmer Switch Buttons
-  description: ''
-  use_blueprint:
-    path: dustins/zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
-    input:
-      zha_device: df4a7dff9ef0cc3ae3c1cf1eb93542db
-      Up_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.chill_night
-        metadata: {}
-      Hue_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_night
-        metadata: {}
-      Down_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bedtime
-        metadata: {}
-      Power_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_morning
-        metadata: {}
-- id: '1703028714995'
+- id: '1711558932214'
   alias: Living Room Dimmer Switch Buttons
   description: ''
   use_blueprint:
-    path: dustins/zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
+    path: zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
     input:
       zha_device: ae99dce7de5127c7185c1d5ac542c982
       Up_Press:
@@ -67,4 +40,31 @@
       - service: scene.turn_on
         target:
           entity_id: scene.leave_home
+        metadata: {}
+- id: '1711558952233'
+  alias: Bedroom Dimmer Switch Buttons
+  description: ''
+  use_blueprint:
+    path: zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
+    input:
+      zha_device: df4a7dff9ef0cc3ae3c1cf1eb93542db
+      Up_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.chill_night
+        metadata: {}
+      Hue_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_night
+        metadata: {}
+      Down_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.bedtime
+        metadata: {}
+      Power_Press:
+      - service: scene.turn_on
+        target:
+          entity_id: scene.good_morning
         metadata: {}
