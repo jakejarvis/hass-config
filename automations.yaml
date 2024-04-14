@@ -68,3 +68,20 @@
         target:
           entity_id: scene.good_morning
         metadata: {}
+- id: '1712849440620'
+  alias: Weekly backup
+  description: ''
+  trigger:
+  - platform: time
+    at: 03:15:00
+  condition:
+  - condition: time
+    weekday:
+    - wed
+  action:
+  - service: hassio.backup_full
+    metadata: {}
+    data:
+      compressed: true
+      homeassistant_exclude_database: false
+  mode: single

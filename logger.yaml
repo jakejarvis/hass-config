@@ -1,1 +1,8 @@
 default: info
+
+filters:
+  # HA is suddenly *really* upset about scrypted's (lack of?) changelog. nobody cares.
+  homeassistant.components.hassio.handler:
+    - "^Client error on /addons/.*/changelog request 0, message='Attempt to decode JSON with unexpected mimetype: application/octet-stream'"
+  homeassistant.components.hassio.data:
+    - "^Could not fetch changelog for"
