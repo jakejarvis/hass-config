@@ -13,7 +13,13 @@ homeassistant:
     # keeping regular HA auth for now just in case authelia breaks, that would be bad...
     - type: homeassistant
 
+# random one-offs which require manual activation:
+ffmpeg:
+wake_on_lan:
+
+# all other configurations are in the following yaml files:
 automation: !include automations.yaml
+cover: !include cover.yaml
 frontend: !include frontend.yaml
 http: !include http.yaml
 influxdb: !include influxdb.yaml
@@ -21,3 +27,4 @@ logger: !include logger.yaml
 recorder: !include recorder.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+lovelace: !include ui-lovelace.yaml

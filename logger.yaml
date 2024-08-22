@@ -6,3 +6,8 @@ filters:
     - "^Client error on /addons/.*/changelog request 0, message='Attempt to decode JSON with unexpected mimetype: application/octet-stream'"
   homeassistant.components.hassio.data:
     - "^Could not fetch changelog for"
+  # temporary, see: https://github.com/hacs/integration/issues/3943
+  homeassistant.util.json:
+    - "^json_loads was called from hacs, this is a deprecated function"
+  homeassistant.helpers.frame:
+    - "^Detected that custom integration 'hacs'"

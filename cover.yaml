@@ -1,0 +1,26 @@
+  - platform: template
+    covers:
+      garage:
+        friendly_name: 'Garage Door'
+        unique_id: 8d36b65e-c980-48d3-873e-efb551b96788
+        value_template: >
+          {%- if states.binary_sensor.garage_door -%}
+            {{ states.binary_sensor.garage_door.state == 'on' }}
+          {%- else -%}
+            true
+          {%- endif -%}
+        open_cover:
+          action: cover.open_cover
+          entity_id: cover.garage_door_controller
+        close_cover:
+          action: cover.close_cover
+          entity_id: cover.garage_door_controller
+        # stop_cover:
+        #   action: cover.stop_cover
+        #   entity_id: cover.garage_door_controller
+        icon_template: >
+          {%- if states.binary_sensor.garage_door.state == 'on' -%}
+            mdi:garage-open
+          {%- else -%}
+            mdi:garage
+          {%- endif -%}

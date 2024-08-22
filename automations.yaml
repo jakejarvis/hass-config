@@ -1,73 +1,3 @@
-- id: '1698764547304'
-  alias: Turn on LG TV via HDMI-CEC
-  description: ''
-  trigger:
-  - platform: device
-    device_id: f5f3cf9514faa9997ed29ed0ea2751cc
-    domain: webostv
-    type: webostv.turn_on
-  condition: []
-  action:
-  - service: remote.send_command
-    data:
-      command: wakeup
-    target:
-      entity_id: remote.living_room_apple_tv
-  mode: single
-- id: '1711558932214'
-  alias: Living Room Dimmer Switch Buttons
-  description: ''
-  use_blueprint:
-    path: zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
-    input:
-      zha_device: ae99dce7de5127c7185c1d5ac542c982
-      Up_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.chill_night
-        metadata: {}
-      Hue_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_night
-        metadata: {}
-      Power_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_morning
-        metadata: {}
-      Down_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.leave_home
-        metadata: {}
-- id: '1711558952233'
-  alias: Bedroom Dimmer Switch Buttons
-  description: ''
-  use_blueprint:
-    path: zha-philips-hue-v2-smart-dimmer-switch-and-remote-rwl022.yaml
-    input:
-      zha_device: df4a7dff9ef0cc3ae3c1cf1eb93542db
-      Up_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.chill_night
-        metadata: {}
-      Hue_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_night
-        metadata: {}
-      Down_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.bedtime
-        metadata: {}
-      Power_Press:
-      - service: scene.turn_on
-        target:
-          entity_id: scene.good_morning
-        metadata: {}
 - id: '1712849440620'
   alias: Weekly backup
   description: ''
@@ -84,4 +14,56 @@
     data:
       compressed: true
       homeassistant_exclude_database: false
+  mode: single
+- id: '1722184103094'
+  alias: Sync Master Bedroom Hallway Lights
+  description: ''
+  action: []
+  use_blueprint:
+    path: alexdelprete/ha-blueprint-linked-entities.yaml
+    input:
+      linked_entity:
+      - light.master_bedroom_hallway_light_1
+      - light.master_bedroom_hallway_light_2
+      delay_miliseconds: 250
+- id: '1722201974893'
+  alias: Sync Kitchen Cabinet LED Strips
+  description: ''
+  use_blueprint:
+    path: alexdelprete/ha-blueprint-linked-entities.yaml
+    input:
+      linked_entity:
+      - light.kitchen_above_cabinet_led_strip
+      - light.kitchen_under_cabinet_led_strip
+- id: '1722612885154'
+  alias: Turn on Living Room TV via HDMI-CEC
+  description: ''
+  trigger:
+  - platform: device
+    device_id: f5f3cf9514faa9997ed29ed0ea2751cc
+    domain: webostv
+    type: webostv.turn_on
+  condition: []
+  action:
+  - data:
+      command: wakeup
+    target:
+      entity_id: remote.living_room_apple_tv
+    action: remote.send_command
+  mode: single
+- id: '1722613147471'
+  alias: Turn on Master Bedroom TV via HDMI-CEC
+  description: ''
+  trigger:
+  - platform: device
+    device_id: b489759c5288855f8ecc48474edc8607
+    domain: webostv
+    type: webostv.turn_on
+  condition: []
+  action:
+  - data:
+      command: wakeup
+    action: remote.send_command
+    target:
+      entity_id: remote.master_bedroom_apple_tv
   mode: single

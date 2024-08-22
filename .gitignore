@@ -15,6 +15,7 @@ html5_push_registrations.conf
 image/
 tts/
 deps/
+esphome/
+custom_components/hacs/
 model_cache/
 __pycache__/
-

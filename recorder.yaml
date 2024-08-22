@@ -12,8 +12,17 @@ exclude:
     - sensor.myip
     - sensor.myip_ipv6
     - sensor.uptime
+    - sensor.scrypted_token_127_0_0_1_10443
   entity_globs:
     - sensor.system_monitor_*
     - sensor.sun_*
-    - sensor.openweathermap_*
-    - sensor.londonderry_moose_hill_new_hampshire_usa_*
+    - sensor.tomorrow_io_*
+    - sensor.*_cloud_connection
+    - sensor.*_signal_level
+    - sensor.*_signal_strength
+    - sensor.*_ssid
+    - sensor.*_zigbee_connectivity
+    - select.*_light_preset
+    - select.*_smooth_off
+    - select.*_smooth_on
+    - sensor.dcp_l2550dw_*
